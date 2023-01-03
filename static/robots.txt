@@ -1,0 +1,3 @@
+User-agent: *
+
+sitemap: https://hegemonies.site/sitemap-index.xml
