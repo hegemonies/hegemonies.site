@@ -3,8 +3,70 @@ title: About
 slug: "/about"
 ---
 
-Hi!
+Hello, my name is *Daniil Dyachenko*, I write backend on kotlin & spring🌿.
 
-I am Daniil Dyachenko aka **hegemonies**, kotlin backend developer from Novosibirsk⛄️.
+![Photo of me](me.jpeg)
 
-I am passionate about kotlin, backend, microservices, hardware & coffee☕️.
+I am working in the **Prequel Inc.** company that developing an AI-based photo and video editing app for mobile both iOS and Android systems right now.
+
+I worked in the Eltex company that manufactures telecommunication devices from May 2019 to December 2022. We are developing an *NMS* (network management system). Services are being of my pride:
+- Task service that implements logic helps users make fire-and-forget, recurring and delayed tasks on the management of network devices. This service uses a queue in PostgreSQL.
+- Monitoring service (split into three microservices) that implements the logic for collecting a network device’s metrics by SNMP protocol, discovering network devices and device’s entities (like interfaces, SLA tests, and so on). This service allows the user to not think about monitoring his devices because we made a solution from the box.
+- The firmware storing service implements the logic for downloading and uploading firmware files by HTTP protocol (and by FTP protocol in the future). This service allows you to work with him in parallel, because he uses a reactive way to communicate a client with a server and async input\output on a disk.
+These are all services I made by myself from scratch.
+
+## Experience
+
+### Kotlin Backend Developer in Prequel Inc.
+
+Since <u>December 2022</u>.
+
+[Link to app](https://prequel.app/).
+
+![Prequel screenshot](screenshot-prequlapp.png)
+
+Stack:
+- Kotlin
+- Spring Framework
+- R2DBC
+- gRPC, REST
+- PostgreSQL, Redis, Kafka
+
+### Kotlin Backend Developer in Eltex enterprise
+
+3.75 years from <u>May 2019</u> to <u>December 2022</u>.
+
+The product name is [ECCM](https://eltex-co.ru/catalog/management/eccm/).
+
+![ECCM screenshot](screenshot-eccm.png)
+
+Stack: 
+- Kotlin (experienced), Golang (beginner), Python (beginner)
+- Spring Framework
+- PostgreSQL, Redis
+- RabbitMQ, gRPC, HTTP, Protobuf, Json
+- Kotlin Coroutines, reactor
+- JUnit, mockk
+- Docker, Kubernetes
+- Grafana, Prometheus, ELK, Greylog
+- Gradle, GitLab
+
+Obligations:
+- **Choose**, analyze, implement new technologies such like Redis, Hazelcase, TimeScaleDB, JobRunr and so on;
+- **Build** a microservice system;
+- **Implement** of services includes database schema development, implementation of the logic, and writing of OpenAPI specification;
+- **Collect** requirements for complex business features, analyze and write tech documentation;
+- **Optimize** microservice jvm services;
+- **Perform** interviews on junior, middle, and senior positions;
+- **Perform** speeches at internal meetings;
+- **Perform** code reviews and helping colleagues.
+
+Key achievements:
+- **Implementation** monitoring service by myself from scratch. It implements the logic for collecting a network device’s metrics by SNMP protocol, discovering network devices and device entities (like interfaces, SLA tests, and so on).
+- **Optimization** of a lot of services:
+    - I accelerated a request to a database that chose the metric’s list for collecting, and that also reduced the load on him;
+    - I reduced the load on network and network devices from 20k RPS to 4-5k RPS for tasks on a collection of metrics without damage to business functional;
+    - I reduced the time of requests to a cache in parallel from 100-500ms to 1-10ms.
+- **Implementation** task manager service for management of network devices (for example, restart, firmware upgrade, apply the configuration, and so on) by myself from scratch;
+- **Implementation** service for negotiation with extended application that performs Ansible playbooks by myself from scratch;
+- **Implementation** service for storing and delivery of firmware files by myself from scratch.
