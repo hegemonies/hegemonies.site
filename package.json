@@ -10,7 +10,8 @@
     "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "build-docker": "docker build --tag hegemonies.site:latest ."
   },
   "dependencies": {
     "@lekoarts/gatsby-theme-minimal-blog": "^6.0.0",
