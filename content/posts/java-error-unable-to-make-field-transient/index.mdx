@@ -1,0 +1,63 @@
+---
+title: How To Fix Error 'Unable to make field transient'
+date: 2023-01-06
+tags:
+  - Java
+  - HowTo
+  - Error
+---
+
+# Problem
+
+Текст ошибки:
+
+```log
+Suppressed: java.lang.reflect.InaccessibleObjectException: Unable to make field transient java.lang.Object[] java.util.ArrayList.elementData accessible: module java.base does not "opens java.util" to unnamed module @6adbc9d
+		at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354)
+		at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
+		at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:178)
+		at java.base/java.lang.reflect.Field.setAccessible(Field.java:172)
+		at net.sf.ehcache.pool.sizeof.ObjectGraphWalker.getAllFields(ObjectGraphWalker.java:271)
+		at net.sf.ehcache.pool.sizeof.ObjectGraphWalker.getFilteredFields(ObjectGraphWalker.java:229)
+		at net.sf.ehcache.pool.sizeof.ObjectGraphWalker.walk(ObjectGraphWalker.java:160)
+		at net.sf.ehcache.pool.sizeof.SizeOf.deepSizeOf(SizeOf.java:72)
+		at net.sf.ehcache.pool.impl.DefaultSizeOfEngine.sizeOf(DefaultSizeOfEngine.java:190)
+		at net.sf.ehcache.pool.impl.AbstractPoolAccessor.add(AbstractPoolAccessor.java:63)
+		at net.sf.ehcache.store.MemoryStore.put(MemoryStore.java:281)
+		at net.sf.ehcache.Cache.putInternal(Cache.java:1620)
+		at net.sf.ehcache.Cache.put(Cache.java:1546)
+		at net.sf.ehcache.Cache.put(Cache.java:1511)
+		at org.springframework.cache.ehcache.EhCacheCache.put(EhCacheCache.java:128)
+		... 118 common frames omitted
+```
+
+# How to reproduce it
+
+Если в конфигурации Ehcache установить лимит для размера определенного кэша или всех кэшей, 
+то Java будет выбрасывать исключения при попытках вставки в кэш, как приведены выше, 
+потому что Ehcache попытается подсчитать размеры объект и не сможет из-за ограничений доступа на вызовы методов рефлексии 
+у объектов из других пакетов.
+
+# How to solve it
+
+Мне помог ответ на [StackOverflow](https://stackoverflow.com/questions/70756414/java-lang-reflect-inaccessibleobjectexception-unable-to-make-field-private-fina).
+
+В нем написано, что необходимо добавить VM опции во время запуска приложения:
+
+```
+--add-opens java.base/java.util=ALL-UNNAMED
+```
+
+Также может работать и для других пакетов. Пример:
+
+```
+--add-opens java.base/java.lang=ALL-UNNAMED
+--add-opens java.base/java.nio=ALL-UNNAMED
+--add-opens java.base/sun.nio.ch=ALL-UNNAMED
+```
+
+Пример запуска java приложения с опциями:
+
+```shell
+java --add-opens java.base/java.lang=ALL-UNNAMED -jar ./app.jar
+```
