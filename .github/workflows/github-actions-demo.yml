@@ -8,8 +8,9 @@ jobs:
     steps:
       - name: deploy to prod
         uses: appleboy/ssh-action@v0.1.7
-        host: ${{ secrets.PROD_HOSTNAME }}
-        username: ${{ secrets.PROD_USERNAME }}
-        password: ${{ secrets.PROD_PASSWORD }}
-        script:
-          - ./deploy-hegemonies-site.sh
+        with:
+          host: ${{ secrets.PROD_HOSTNAME }}
+          username: ${{ secrets.PROD_USERNAME }}
+          password: ${{ secrets.PROD_PASSWORD }}
+          script:
+            - ./deploy-hegemonies-site.sh
