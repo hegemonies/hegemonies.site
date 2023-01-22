@@ -12,5 +12,4 @@ jobs:
           host: ${{ secrets.PROD_HOSTNAME }}
           username: ${{ secrets.PROD_USERNAME }}
           password: ${{ secrets.PROD_PASSWORD }}
-          script:
-            - ./deploy-hegemonies-site.sh
+          script: ./deploy-hegemonies-site.sh
