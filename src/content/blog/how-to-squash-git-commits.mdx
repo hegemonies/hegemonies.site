@@ -1,0 +1,38 @@
+---
+title: How To Squash Git Commits
+description: ""
+pubDate: 2023-01-09
+tags:
+  - Git
+  - HowTo
+---
+
+# Как сделать сквош комитов
+
+1. Перейти на ветку
+
+    ```shell
+    git checkout branch-name
+    ```
+
+1. Избавиться от предыдущих коммитов
+
+    ```shell
+    git reset --soft HEAD~<количество-коммитов>
+    ```
+
+    > Пример: `git reset --sort HEAD~5`
+
+1. Закоммитить изменения
+
+    ```shell
+    git commit -m 'Commit message'
+    ```
+
+1. Запушить правки
+
+    Необходимо сделать это с опцией `--force`, так как мы перезаписываем коммиты в ветке.
+
+    ```shell
+    git push origin branch-name --force
+    ```
