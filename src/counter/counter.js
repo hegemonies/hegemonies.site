@@ -16,6 +16,8 @@ export function counter(path) {
   } else {
     url = "https://counter.hegemonies.site/api/v1/counter/increment";
   }
+  console.log("APP_MODE =", import.meta.env.APP_MODE)
+  console.log("url =", url);
   
   fetch(url, requestOptions)
     .then(result => result.json())

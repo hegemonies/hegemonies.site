@@ -10,7 +10,7 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"build-docker": "docker build --tag hegemonies/hegemonies.site:latest .",
-		"run-docker": "docker run -e APP_TOKEN=token -e APP_MODE=dev -p 3100:3000 hegemonies/hegemonies.site:latest"
+		"run-docker": "docker run --restart always -d -e APP_TOKEN=token -e APP_MODE=dev -p 3200:3000 hegemonies/hegemonies.site:latest"
 	},
 	"dependencies": {
 		"astro": "^2.0.15",

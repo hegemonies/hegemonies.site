@@ -10,4 +10,4 @@ RUN /root/.local/share/pnpm/pnpm install
 RUN /root/.local/share/pnpm/pnpm build
 
 EXPOSE 3000
-CMD /root/.local/share/pnpm/pnpm dev --host
+CMD /root/.local/share/pnpm/pnpm start --host
