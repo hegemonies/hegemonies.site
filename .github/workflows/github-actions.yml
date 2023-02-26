@@ -26,12 +26,12 @@ jobs:
           host: ${{ secrets.PROD_HOSTNAME }}
           username: ${{ secrets.PROD_USERNAME }}
           password: ${{ secrets.PROD_PASSWORD }}
-          source: "public/"
+          source: "dist/"
           target: "tmp/public/"
-      # - name: deploy to prod
-        # uses: appleboy/ssh-action@v0.1.7
-        # with:
-        #   host: ${{ secrets.PROD_HOSTNAME }}
-        #   username: ${{ secrets.PROD_USERNAME }}
-        #   password: ${{ secrets.PROD_PASSWORD }}
-        #   script: ./deploy-hegemonies-site-v2.sh
+      - name: deploy to prod
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.PROD_HOSTNAME }}
+          username: ${{ secrets.PROD_USERNAME }}
+          password: ${{ secrets.PROD_PASSWORD }}
+          script: ./deploy-hegemonies-site-v3.sh
