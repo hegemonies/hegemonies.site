@@ -1,17 +1,17 @@
 export function counter(path) {
-  console.log("token =", process.env.REACT_APP_TOKEN)
+  console.log("token =", import.meta.env.APP_TOKEN)
 
   const requestOptions = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
-      token: process.env.REACT_APP_TOKEN,
+      token: import.meta.env.APP_TOKEN,
       url: path
     })
   };
 
   var url = '';
-  if (process.env.REACT_MODE === "dev") {
+  if (import.meta.env.APP_MODE === "dev") {
     url = "http://localhost:8080/api/v1/counter/increment";
   } else {
     url = "https://counter.hegemonies.site/api/v1/counter/increment";
