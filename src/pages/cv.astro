@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="CV"
+	description="About my work life"
+	pubDate={new Date('Jan 08 2023')}
+	updatedDate={new Date('Jan 08 2023')}
+	heroImage="/about/me.jpeg"
+>
+
+<p>Hello, my name is <i>Daniil Dyachenko</i> (ru, eng), I write backend on kotlin & spring🌿.</p>
+
+<ul>
+	<li>Mail: <a href="mailto:dadanil2610@gmail.com">dadanil2610@gmail.com</a></li>
+	<li>Telegram: <a href="https://t.me/hegemonies">@hegemonies</a></li>
+	<li>Github: <a href="https://github.com/hegemonies">hegemonies</a></li>
+	<li>Twitter: <a href="https://twitter.com/dadanil2610">@dadanil2610</a></li>
+	<li>LinkedIn: <a href="https://www.linkedin.com/in/daniil-dyachenko-2676b9188/">daniil-dyachenko</a></li>
+	<li>Website: <a href="https://hegemonies.site">hegemonies.site</a></li>
+	<li>Download CV eng: <a href="/about/CV_eng.pdf">CV eng</a></li>
+	<li>Download CV ru: <a href="/about/CV_ru.pdf">CV ru</a></li>
+</ul>
+
+<p>I am working in the <strong>Prequel Inc.</strong> company that developing an AI-based photo and video editing app for mobile both iOS and Android systems right now.</p>
+
+<p>I worked in the Eltex company that manufactures telecommunication devices from May 2019 to December 2022. We are developing an <i>NMS</i> (network management system). Services are being of my pride:</p>
+<ul>
+	<li>Task service that implements logic helps users make fire-and-forget, recurring and delayed tasks on the management of network devices. This service uses a queue in PostgreSQL.</li>
+	<li>Monitoring service (split into three microservices) that implements the logic for collecting a network device’s metrics by SNMP protocol, discovering network devices and device’s entities (like interfaces, SLA tests, and so on). This service allows the user to not think about monitoring his devices because we made a solution from the box.</li>
+	<li>The firmware storing service implements the logic for downloading and uploading firmware files by HTTP protocol (and by FTP protocol in the future). This service allows you to work with him in parallel, because he uses a reactive way to communicate a client with a server and async input\output on a disk.</li>
+</ul>
+<p>These are all services I made by myself from scratch.</p>
+
+
+<h2>Experience</h2>
+
+<h3>Kotlin Backend Developer in Prequel Inc.</h3>
+
+<p>Since <u>December 2022</u>.</p>
+
+<a href="https://prequel.app/">Link to app.</a>
+
+<img src="/about/screenshot-prequlapp.png" alt="Prequel app screenshot">
+
+<p>Stack:</p>
+<ul>
+	<li>Kotlin</li>
+	<li>Spring Framework</li>
+	<li>R2DBC</li>
+	<li>gRPC, REST</li>
+	<li>PostgreSQL, Redis, Kafka</li>
+</ul>
+
+<h3>Kotlin Backend Developer in Eltex enterprise</h3>
+
+<p>3.75 years from <u>May 2019</u> to <u>December 2022</u>.</p>
+
+<p>The product name is <a href="https://eltex-co.ru/catalog/management/eccm/">ECCM</a>.</p>
+
+<img src="/about/screenshot-eccm.png" alt="ECCM screenshot">
+
+<h4>Stack</h4>
+<ul>
+	<li>Kotlin (experienced), Golang (beginner), Python (beginner)</li>
+	<li>Spring Framework</li>
+	<li>PostgreSQL, Redis</li>
+	<li>RabbitMQ, gRPC, HTTP, Protobuf, Json</li>
+	<li>Kotlin Coroutines, reactor</li>
+	<li>JUnit, mockk</li>
+	<li>Docker, Kubernetes</li>
+	<li>Grafana, Prometheus, ELK, Greylog</li>
+	<li>Gradle, GitLab</li>
+</ul>
+
+<h4>Obligations</h4>
+<ul>
+	<li><strong>Choose</strong>, analyze, implement new technologies such like Redis, Hazelcase, TimeScaleDB, JobRunr and so on;</li>
+	<li><strong>Build</strong> a microservice system;</li>
+	<li><strong>Implement</strong> of services includes database schema development, implementation of the logic, and writing of OpenAPI specification;</li>
+	<li><strong>Collect</strong> requirements for complex business features, analyze and write tech documentation;</li>
+	<li><strong>Optimize</strong> microservice jvm services;</li>
+	<li><strong>Perform</strong> interviews on junior, middle, and senior positions;</li>
+	<li><strong>Perform</strong> speeches at internal meetings;</li>
+	<li><strong>Perform</strong> code reviews and helping colleagues.</li>
+</ul>
+
+<h4>Key achievements</h4>
+<ul>
+	<li><strong>Implementation</strong> monitoring service by myself from scratch. It implements the logic for collecting a network device’s metrics by SNMP protocol, discovering network devices and device entities (like interfaces, SLA tests, and so on).</li>
+	<li><strong>Optimization</strong> of a lot of services:</li>
+	<ul>
+		<li>I accelerated a request to a database that chose the metric’s list for collecting, and that also reduced the load on him;</li>
+		<li>I reduced the load on network and network devices from 20k RPS to 4-5k RPS for tasks on a collection of metrics without damage to business functional;</li>
+		<li>I reduced the time of requests to a cache in parallel from 100-500ms to 1-10ms.</li>
+	</ul>
+	<li><strong>Implementation</strong> task manager service for management of network devices (for example, restart, firmware upgrade, apply the configuration, and so on) by myself from scratch;</li>
+	<li><strong>Implementation</strong> service for negotiation with extended application that performs Ansible playbooks by myself from scratch;</li>
+	<li><strong>Implementation</strong> service for storing and delivery of firmware files by myself from scratch.</li>
+</ul>
+
+<h3>Department Assistent in NSTU</h3>
+
+<a href="https://www.nstu.ru/"><i>NSTU</i> - Novosibirsk State Technical University</a>
+
+<p>9 month from <u>January</u> to <u>October</u> 2022.</p>
+
+<h4>Obligations</h4>
+<ul>
+	<li><strong>Compilation</strong> of work programs;</li>
+	<li><strong>Conduction</strong> seminars on computer science for students on the business direction.</li>
+</ul>
+
+<p><strong>Key achievements:</strong> I compiled the work program for “Data Warehouse” course.</p>
+
+<h2>Side-Projects</h2>
+
+<ul>
+	<li>BravoTelegramStockTagNews, <i>Kotlin, Ktor, Exposed, Angular</i> - <a href="https://github.com/hegemonies/btstn">github.com/hegemonies/btstn</a></li>
+	<li>Alarm bot for telegram, <i>Kotlin</i> - <a href="https://github.com/hegemonies/alarm-bot">github.com/hegemonies/alarm-bot</a></li>
+	<li>SNMP Browser, <i>Golang</i> - <a href="https://github.com/hegemonies/snmp-browser">github.com/hegemonies/snmp-browser</a></li>
+	<li>Welcome Local Page, <i>Ruby, RubyOnRails</i> - <a href="https://github.com/hegemonies/welcome-local-page">github.com/hegemonies/welcome-local-page</a></li>
+	<li>Short URL service, <i>Python, Flask</i> - <a href="https://github.com/hegemonies/short-url-service">github.com/hegemonies/short-url-service</a></li>
+	<li>Game Picker, <i>Kotlin, Spring</i> - <a href="https://github.com/hegemonies/game-picker">github.com/hegemonies/game-picker</a></li>
+</ul>
+
+
+<h2>Education</h2>
+
+<h3>SibSUTIS (Siberian State University of Telecommunications and Informatics)</h3>
+
+<ul>
+	<li>Novosibirsk, 2020, Bachelor’s Degree of Computer Science.</li>
+</ul>
+
+<p>The theme of the diploma: “Development of a microservice for storing and delivering of firmware files”.</p>
+
+<h2>Languages</h2>
+
+<ul>
+	<li>Russian - Native</li>
+	<li>English - B1+, CERF Certificate</li>
+</ul>
+
+
+<h2>Interests</h2>
+
+<ul>
+	<li>Reading news from software and hardware sphere;</li>
+	<li>Writing of side-projects;</li>
+	<li>Drinking good filter coffee.</li>
+</ul>
+
+
+</Layout>
