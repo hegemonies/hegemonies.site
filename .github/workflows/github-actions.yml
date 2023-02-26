@@ -28,7 +28,7 @@ jobs:
           password: ${{ secrets.PROD_PASSWORD }}
           source: "public/"
           target: "tmp/public/"
-      - name: deploy to prod
+      # - name: deploy to prod
         # uses: appleboy/ssh-action@v0.1.7
         # with:
         #   host: ${{ secrets.PROD_HOSTNAME }}
