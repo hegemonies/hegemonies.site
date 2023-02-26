@@ -4,12 +4,13 @@
 	"version": "1.0.1",
 	"author": "Daniil Dyachenko",
 	"scripts": {
-		"dev": "astro dev",
+		"dev": "APP_TOKEN=token APP_MODE=dev astro dev",
 		"start": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"build-docker": "docker build --tag hegemonies.site:latest ."
+		"build-docker": "docker build --tag hegemonies/hegemonies.site:latest .",
+		"run-docker": "docker run -e APP_TOKEN=token -e APP_MODE=dev -p 3100:3000 hegemonies/hegemonies.site:latest"
 	},
 	"dependencies": {
 		"astro": "^2.0.15",
