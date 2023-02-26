@@ -6,8 +6,8 @@ COPY ./ ./
 
 RUN wget -qO- https://get.pnpm.io/install.sh | ENV="~/.shrc" SHELL="$(which sh)" sh -
 
-RUN pnpm install
-RUN pnpm build
+RUN /root/.local/share/pnpm install
+RUN /root/.local/share/pnpm build
 
 EXPOSE 3000
-CMD pnpm dev
+CMD /root/.local/share/pnpm dev
