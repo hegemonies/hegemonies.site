@@ -8,20 +8,8 @@ jobs:
     steps:
       - name: checkout the repository
         uses: actions/checkout@v3
-      - name: install node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 19
-      - name: install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7.28.0
-      - name: install deps
-        run: pnpm install
-      - name: build
-        run: pnpm build
       - name: build docker image
-        run: pnpm build-docker
+        run: docker build --tag hegemonies/hegemonies.site:latest .
       - name: login to docker hub
         uses: docker/login-action@v2
         with:
