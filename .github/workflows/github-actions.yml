@@ -17,21 +17,22 @@ jobs:
         with:
           version: 7.28.0
       - name: install deps
-        run: pnpm i
+        run: pnpm install
       - name: build
         run: pnpm build
-      - name: copy file via ssh
-        uses: appleboy/scp-action@master
+      - name: build docker image
+        run: pnpm build-docker
+      - name: login to docker hub
+        uses: docker/login-action@v2
         with:
-          host: ${{ secrets.PROD_HOSTNAME }}
-          username: ${{ secrets.PROD_USERNAME }}
-          password: ${{ secrets.PROD_PASSWORD }}
-          source: "dist/"
-          target: "tmp/public/"
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      - name: push docker image
+        run: docker push hegemonies/hegemonies.site:latest
       - name: deploy to prod
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.PROD_HOSTNAME }}
           username: ${{ secrets.PROD_USERNAME }}
           password: ${{ secrets.PROD_PASSWORD }}
-          script: ./deploy-hegemonies-site-v3.sh
+          script: ./deploy-hegemonies-site-v4.sh
