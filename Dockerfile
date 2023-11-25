@@ -4,7 +4,7 @@ RUN mkdir /app
 WORKDIR /app
 COPY ./ ./
 
-RUN wget -qO- https://get.pnpm.io/install.sh | ENV="~/.shrc" SHELL="$(which sh)" sh -
+RUN curl -fsSL https://get.pnpm.io/install.sh | bash -
 
 RUN /root/.local/share/pnpm/pnpm install
 RUN /root/.local/share/pnpm/pnpm build
