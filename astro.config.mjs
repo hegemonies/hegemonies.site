@@ -7,4 +7,5 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://hegemonies.site',
 	integrations: [mdx(), sitemap()],
+	output: 'static'
 });

@@ -2,8 +2,6 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
-import '../counter/counter';
-import { counter } from '../counter/counter';
 
 export interface Props {
 	title: string;
@@ -12,11 +10,15 @@ export interface Props {
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const pathname = Astro.url.pathname;
 
 const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
-
-counter(Astro.url.pathname);
 ---
+
+<script is:inline define:vars={{pathname}} type="module">
+	import { counter } from "../counter/counter";
+	counter(pathname);
+</script>
 
 <!-- Fonts -->
 <link href="/OnestLight1602-hint.woff" rel="stylesheet" />
