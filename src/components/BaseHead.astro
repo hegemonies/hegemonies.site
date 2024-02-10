@@ -16,7 +16,7 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 ---
 
 <script is:inline define:vars={{pathname}} type="module">
-	import { counter } from "../counter/counter";
+	import { counter } from "/counter.js";
 	counter(pathname);
 </script>
 
