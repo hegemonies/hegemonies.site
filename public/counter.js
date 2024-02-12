@@ -1,11 +1,9 @@
 export function counter(path) {
-  console.log("token =", import.meta.env.APP_TOKEN)
-
   const requestOptions = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
-      token: import.meta.env.APP_TOKEN,
+      token: import.meta.env.PUBLIC_APP_TOKEN,
       url: path
     })
   };
@@ -16,8 +14,6 @@ export function counter(path) {
   } else {
     url = "https://counter.hegemonies.site/api/v1/counter/increment";
   }
-  console.log("APP_MODE =", import.meta.env.APP_MODE)
-  console.log("url =", url);
   
   fetch(url, requestOptions)
     .then(result => result.json())
