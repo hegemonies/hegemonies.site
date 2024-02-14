@@ -3,7 +3,7 @@ export function counter(path) {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
-      token: import.meta.env.PUBLIC_APP_TOKEN,
+      token: "grafting-rekindle-blurred-renovator9-dedicate",
       url: path
     })
   };
