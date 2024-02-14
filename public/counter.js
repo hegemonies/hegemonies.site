@@ -8,12 +8,7 @@ export function counter(path) {
     })
   };
 
-  var url = '';
-  if (import.meta.env.APP_MODE === "dev") {
-    url = "http://localhost:8080/api/v1/counter/increment";
-  } else {
-    url = "https://counter.hegemonies.site/api/v1/counter/increment";
-  }
+  var url = "https://counter.hegemonies.site/api/v1/counter/increment";
   
   fetch(url, requestOptions)
     .then(result => result.json())
