@@ -4,7 +4,7 @@
 	"version": "1.0.1",
 	"author": "Daniil Dyachenko",
 	"scripts": {
-		"dev": "APP_TOKEN=token APP_MODE=dev astro dev",
+		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
