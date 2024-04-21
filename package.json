@@ -13,9 +13,9 @@
 		"run-docker": "docker run --restart always -d -e APP_TOKEN=token -e APP_MODE=dev -p 3200:3000 hegemonies/hegemonies.site:latest"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^1.1.5",
-		"@astrojs/rss": "^3.0.0",
-		"@astrojs/sitemap": "^3.0.3",
-		"astro": "^4.3.5"
+		"@astrojs/mdx": "^2.3.1",
+		"@astrojs/rss": "^4.0.5",
+		"@astrojs/sitemap": "^3.1.4",
+		"astro": "^4.6.3"
 	}
 }
