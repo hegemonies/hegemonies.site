@@ -1,13 +1,15 @@
 ---
 const today = new Date();
+import ScrollTop from './ScrollTop.astro';
 ---
 
 <footer>
-	&copy; {today.getFullYear()} Daniil Dyachenko. All rights reserved.
+        &copy; {today.getFullYear()} Daniil Dyachenko. All rights reserved.
 </footer>
+<ScrollTop />
 <style>
-	footer {
-		padding: 25px;
-		text-align: center;
-	}
+        footer {
+                padding: 25px;
+                text-align: center;
+        }
 </style>
