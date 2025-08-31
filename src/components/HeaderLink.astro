@@ -3,14 +3,21 @@ import type { HTMLAttributes } from 'astro/types';
 
 type Props = HTMLAttributes<'a'>;
 
-const { href, class: className, ...props } = Astro.props;
+const { href, class: className, rel, ...props } = Astro.props as Props;
 
 const { pathname } = Astro.url;
 const isActive = href === pathname || href === pathname.replace(/\/$/, '');
+const computedRel = props.target === "_blank" ? [rel, "noopener", "noreferrer"].filter(Boolean).join(' ') : rel;
 ---
 
-<a href={href} class:list={[className, { active: isActive }]} {...props}>
-	<slot />
+<a
+        href={href}
+        class:list={[className, { active: isActive }]}
+        rel={computedRel}
+        aria-current={isActive ? "page" : undefined}
+        {...props}
+>
+        <slot />
 </a>
 <style>
 	a {
