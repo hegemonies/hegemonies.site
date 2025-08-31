@@ -14,12 +14,6 @@ const pathname = Astro.url.pathname;
 
 const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 ---
-
-<script is:inline define:vars={{pathname}} type="module">
-	import { counter } from "/counter.js";
-	counter(pathname);
-</script>
-
 <!-- Fonts -->
 <link rel="preload" as="font" href="/OnestLight1602-hint.woff" type="font/woff" crossorigin />
 
