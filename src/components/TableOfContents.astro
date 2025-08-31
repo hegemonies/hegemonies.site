@@ -1,0 +1,26 @@
+---
+---
+<nav id="toc">
+  <h2>Table of contents</h2>
+  <ul></ul>
+</nav>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const article = document.querySelector('article');
+    if (!article) return;
+    const tocList = document.querySelector('#toc ul');
+    const headings = article.querySelectorAll('h1, h2, h3');
+    headings.forEach((heading) => {
+      if (!heading.id) return;
+      const li = document.createElement('li');
+      if (heading.tagName.toLowerCase() === 'h3') {
+        li.style.marginLeft = '1rem';
+      }
+      const a = document.createElement('a');
+      a.href = `#${heading.id}`;
+      a.textContent = heading.textContent;
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+  });
+</script>
