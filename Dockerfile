@@ -1,13 +1,13 @@
-FROM node:latest
+FROM node:20-alpine
 
-RUN mkdir /app
 WORKDIR /app
-COPY ./ ./
 
-RUN curl -fsSL https://get.pnpm.io/install.sh | bash -
+COPY package.json pnpm-lock.yaml ./
+RUN corepack enable && pnpm install --frozen-lockfile
 
-RUN /root/.local/share/pnpm/pnpm install
-RUN /root/.local/share/pnpm/pnpm build
+COPY . .
+
+RUN pnpm build
 
 EXPOSE 3000
-CMD /root/.local/share/pnpm/pnpm start --host
+CMD ["pnpm", "start", "--host"]
