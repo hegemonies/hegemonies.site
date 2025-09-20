@@ -1,5 +1,7 @@
 # Daniil Dyachenko's (aka hegemonies) site
 
+This repository contains the source code for Daniil Dyachenko's personal website built with Astro. The project uses PNPM for dependency management and Vitest for unit testing.
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
