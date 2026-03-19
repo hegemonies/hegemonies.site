@@ -14,10 +14,10 @@
 		"test": "vitest"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^4.3.14",
-		"@astrojs/rss": "^4.0.17",
-		"@astrojs/sitemap": "^3.7.1",
-		"astro": "^5.18.1"
+		"@astrojs/mdx": "^4.0.0",
+		"@astrojs/rss": "^4.0.0",
+		"@astrojs/sitemap": "^3.0.0",
+		"astro": "^6.0.6"
 	},
 	"devDependencies": {
 		"vitest": "^3.2.4"
