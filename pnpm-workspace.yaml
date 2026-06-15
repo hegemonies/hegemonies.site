@@ -1,3 +1,6 @@
 allowBuilds:
   esbuild: false
   sharp: true
+
+overrides:
+  esbuild: ">=0.28.1"
