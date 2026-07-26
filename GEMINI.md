@@ -6,12 +6,12 @@ This is a personal website and blog project built with the Astro framework. It s
 
 - **Purpose:** Personal website, portfolio, and technical blog.
 - **Tech Stack:** 
-  - **Framework:** [Astro](https://astro.build/) (v6.x)
+  - **Framework:** [Astro](https://astro.build/) (v7.x)
   - **Content:** MDX for blog posts with Astro Content Collections.
   - **Styling:** Vanilla CSS (Global styles in `src/styles/global.css`).
   - **Testing:** [Vitest](https://vitest.dev/) for unit testing.
   - **Package Manager:** [pnpm](https://pnpm.io/).
-  - **Deployment:** Static site generation (`output: 'static'`) with Docker support.
+  - **Deployment:** Static site generation (`output: 'static'`).
 
 ## Project Structure
 
@@ -22,7 +22,6 @@ This is a personal website and blog project built with the Astro framework. It s
 - `src/components/`: UI components (Header, Footer, BaseHead, etc.).
 - `src/consts.ts`: Global constants like site title and description.
 - `public/`: Static assets (images, fonts, icons).
-- `Dockerfile` & `Dockerfile.lite`: Docker configurations for containerization.
 
 ## Building and Running
 
@@ -33,8 +32,6 @@ This is a personal website and blog project built with the Astro framework. It s
 | `pnpm run build` | Build the production site into the `./dist/` directory. |
 | `pnpm run preview` | Preview the production build locally. |
 | `pnpm run test` | Execute unit tests using Vitest. |
-| `pnpm run build-docker` | Build a Docker image for the site. |
-| `pnpm run run-docker` | Run the site within a Docker container. |
 
 ## Development Conventions
 
