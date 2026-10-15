@@ -4,10 +4,13 @@ allowBuilds:
 
 # Транзитивные зависимости, у которых прямой родитель ещё не выпустил релиз с фиксом.
 overrides:
+  devalue: "^5.9.4"
+  http-cache-semantics: "^4.3.0"
   esbuild: ">=0.28.1"
   js-yaml: "^4.3.2"
   postcss: "^8.5.18"
-  sharp: "^0.35.4"
+  sharp: "^0.35.5"
   svgo: "^4.1.0"
   nanoid: "^3.3.18"
-  smol-toml: "^1.7.1"
+  smol-toml: "^1.8.1"
+  source-map-js: "^1.2.2"
