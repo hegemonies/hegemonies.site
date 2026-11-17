@@ -4,6 +4,7 @@ allowBuilds:
 
 # Транзитивные зависимости, у которых прямой родитель ещё не выпустил релиз с фиксом.
 overrides:
+  fast-xml-parser: "^5.12.0"
   zod: "^4.6.6"
   devalue: "^5.9.4"
   http-cache-semantics: "^4.3.0"
